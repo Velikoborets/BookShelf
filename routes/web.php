@@ -23,4 +23,5 @@ Route::prefix('authors')->group(function(){
     Route::post('/', [AuthorController::class, 'store'])->name('authors.store');
     Route::get('/{author}', [AuthorController::class, 'show'])->name('authors.show');
     Route::get('/{author}/edit', [AuthorController::class, 'edit'])->name('authors.edit');
+    Route::put('/{author}', [AuthorController::class, 'update'])->name('authors.update');
 });

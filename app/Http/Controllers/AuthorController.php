@@ -37,4 +37,14 @@ class AuthorController extends Controller
     {
         return view('authors.edit', compact('author'));
     }
+
+    public function update(Request $request, Author $author) 
+    {
+        $request->validate([
+            'name' => 'required|max:25',
+        ]);
+
+        $author->update($request->all());
+        return redirect()->route('authors.index')->with('success', 'Author update successfuly');
+    }
 }
