@@ -41,4 +41,15 @@ class BookController extends Controller
         $authors = Author::all();
         return view('books.edit', compact('authors', 'book'));
     }
+
+    public function update(Request $request, Book $book)
+    {
+        $request->validate([
+            'title' => 'required|max:25',
+            'author_id' => 'required|exists:authors,id',
+        ]);
+
+        $book->update($request->all());
+        return redirect()->route('books.index')->with('success', 'Books successfully update');
+    }
 }
