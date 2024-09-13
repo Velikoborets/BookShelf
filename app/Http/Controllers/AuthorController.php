@@ -17,4 +17,14 @@ class AuthorController extends Controller
     {
         return view('authors.create');
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:25',
+        ]);
+
+        Author::create($request->all());
+        return redirect()->route('authors.index')->with('success', 'Author created successfuly');
+    }
 }
