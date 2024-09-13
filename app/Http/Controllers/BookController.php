@@ -30,4 +30,9 @@ class BookController extends Controller
         Book::create($request->all());
         return redirect()->route('books.index')->with('success', 'Book successfuly created!');
     }
+
+    public function show(Book $book) 
+    {
+        return view('books.show', compact('book'));
+    }
 }
