@@ -35,4 +35,5 @@ Route::prefix('books')->group(function(){
     Route::get('/{book}', [BookController::class, 'show'])->name('books.show');
     Route::get('/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
     Route::put('/{book}', [BookController::class, 'update'])->name('books.update');
+    Route::delete('/{book}', [BookController::class, 'destroy'])->name('books.destroy');
 });

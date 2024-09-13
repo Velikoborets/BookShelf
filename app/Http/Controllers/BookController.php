@@ -52,4 +52,10 @@ class BookController extends Controller
         $book->update($request->all());
         return redirect()->route('books.index')->with('success', 'Books successfully update');
     }
+
+    public function destroy(Book $book)
+    {
+        $book->delete();
+        return redirect()->route('books.index')->with('success', 'Book deleted');
+    }
 }
