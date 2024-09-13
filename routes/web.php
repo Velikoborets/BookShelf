@@ -30,4 +30,5 @@ Route::prefix('authors')->group(function(){
 
 Route::prefix('books')->group(function(){
     Route::get('/', [BookController::class, 'index'])->name('books.index');
+    Route::get('/create', [BookController::class, 'create'])->name('books.create');
 });
