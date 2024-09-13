@@ -32,4 +32,9 @@ class AuthorController extends Controller
     {
         return view('authors.show', compact('author'));
     }
+
+    public function edit(Author $author)
+    {
+        return view('authors.edit', compact('author'));
+    }
 }
