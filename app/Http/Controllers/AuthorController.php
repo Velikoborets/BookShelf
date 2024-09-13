@@ -47,4 +47,10 @@ class AuthorController extends Controller
         $author->update($request->all());
         return redirect()->route('authors.index')->with('success', 'Author update successfuly');
     }
+
+    public function destroy(Author $author)
+    {
+        $author->delete();
+        return redirect()->route('authors.index')->with('success', 'Author deleted successfuly');
+    }
 }

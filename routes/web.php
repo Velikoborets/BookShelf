@@ -24,4 +24,5 @@ Route::prefix('authors')->group(function(){
     Route::get('/{author}', [AuthorController::class, 'show'])->name('authors.show');
     Route::get('/{author}/edit', [AuthorController::class, 'edit'])->name('authors.edit');
     Route::put('/{author}', [AuthorController::class, 'update'])->name('authors.update');
+    Route::delete('/{author}/delete', [AuthorController::class, 'destroy'])->name('authors.destroy');
 });
