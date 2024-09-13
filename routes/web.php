@@ -33,4 +33,5 @@ Route::prefix('books')->group(function(){
     Route::get('/create', [BookController::class, 'create'])->name('books.create');
     Route::post('/', [BookController::class, 'store'])->name('books.store');
     Route::get('/{book}', [BookController::class, 'show'])->name('books.show');
+    Route::get('/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
 });

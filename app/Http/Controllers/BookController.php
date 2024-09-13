@@ -35,4 +35,10 @@ class BookController extends Controller
     {
         return view('books.show', compact('book'));
     }
+
+    public function edit(Book $book)
+    {
+        $authors = Author::all();
+        return view('books.edit', compact('authors', 'book'));
+    }
 }
