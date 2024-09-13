@@ -12,4 +12,9 @@ class AuthorController extends Controller
         $authors = Author::paginate(3);
         return view('authors.index', compact('authors'));
     }
+
+    public function create()
+    {
+        return view('authors.create');
+    }
 }
