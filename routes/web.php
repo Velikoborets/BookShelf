@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +26,8 @@ Route::prefix('authors')->group(function(){
     Route::get('/{author}/edit', [AuthorController::class, 'edit'])->name('authors.edit');
     Route::put('/{author}', [AuthorController::class, 'update'])->name('authors.update');
     Route::delete('/{author}/delete', [AuthorController::class, 'destroy'])->name('authors.destroy');
+});
+
+Route::prefix('books')->group(function(){
+    Route::get('/', [BookController::class, 'index'])->name('books.index');
 });
