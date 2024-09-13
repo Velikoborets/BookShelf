@@ -27,4 +27,9 @@ class AuthorController extends Controller
         Author::create($request->all());
         return redirect()->route('authors.index')->with('success', 'Author created successfuly');
     }
+
+    public function show(Author $author)
+    {
+        return view('authors.show', compact('author'));
+    }
 }
